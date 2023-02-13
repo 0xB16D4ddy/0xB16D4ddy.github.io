@@ -17,16 +17,16 @@ minimal_mistakes_skin: "haxor" # "air", "aqua", "contrast", "dark", "dirt", "neo
 
 # Site Settings
 locale: "en-US"
-title: "Site Title"
+title: "M3rL1n0x.io"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
-name: "Your Name"
-description: "An amazing website."
-url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name: "M3rL1n0x"
+description: "Pentester, CTF Player."
+url: "https://phuocem201.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
-repository: # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo: # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+repository: "phuocem201/phuocem201" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser: "/assets/images/masthead.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo: "/assets/images/masthead.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute: 200
@@ -82,7 +82,7 @@ baidu_site_verification:
 
 # Social Sharing
 twitter:
-  username:
+  username: k1ngsm4n_5p
 facebook:
   username:
   app_id:
@@ -104,11 +104,13 @@ analytics:
 
 # Site Author
 author:
-  name: "Your Name"
-  avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "I am an **amazing** person."
-  location: "Somewhere"
+  name: "M3rL1n0x"
+  avatar: "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio: "Pentester, CTF Player."
+  location: "Vietnam"
   email:
+  github: phuocem201
+  twitter: k1ngsm4n_5p
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -281,3 +283,4 @@ defaults:
       comments: # true
       share: true
       related: true
+      show_date: true
