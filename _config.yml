@@ -17,14 +17,14 @@ minimal_mistakes_skin: "haxor" # "air", "aqua", "contrast", "dark", "dirt", "neo
 
 # Site Settings
 locale: "en-US"
-title: "M3rL1n0x.io"
+title: "0xP21"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
-name: "M3rL1n0x"
+name: "0xP21"
 description: "Pentester, CTF Player."
-url: "https://phuocem201.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "https://0xP21.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
-repository: "phuocem201/phuocem201" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: "0xP21/0xP21" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/images/masthead.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: "/assets/images/masthead.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
@@ -104,12 +104,12 @@ analytics:
 
 # Site Author
 author:
-  name: "M3rL1n0x"
+  name: "0xP21"
   avatar: "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Pentester, CTF Player."
   location: "Vietnam"
   email:
-  github: phuocem201
+  github: "0xP21"
   twitter: k1ngsm4n_5p
   links:
     - label: "Email"

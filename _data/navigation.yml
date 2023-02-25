@@ -3,7 +3,11 @@ main:
     url: /posts/
   - title: "Categories"
     url: /categories/
+  - title: "Portfolio"
+    url: /portfolio
   - title: "Tags"
     url: /tags/
   - title: "About"
     url: /about/
+  - title: "Front-end"
+    url: /front-end/
