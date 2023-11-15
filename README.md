@@ -18,6 +18,22 @@ Replace sample content with your own and [configure as necessary](https://mmista
 
 ---
 
+## Running Dev environment
+
+Run this command to edit content with automatically refresh the page with each change you make to the source files:
+
+```
+$ bundle exec jekyll serve --livereload
+```
+
+Or this command if you don't want automatically refresh the page:
+
+```
+$ bundle exec jekyll serve
+```
+
+---
+
 ## Troubleshooting
 
 If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:

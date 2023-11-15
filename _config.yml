@@ -17,13 +17,13 @@ minimal_mistakes_skin: "haxor" # "air", "aqua", "contrast", "dark", "dirt", "neo
 
 # Site Settings
 locale: "en-US"
-title: "0xB16D4dy"
+title: "BiGDady.io"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
-name: "0xB16D4dy"
+name: "BiGDady"
 description: "Pentester, CTF Player."
 url: "https://0xB16D4dy.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl: # the subpath of your site, e.g. "/blog"
+baseurl: '' # the subpath of your site, e.g. "/blog"
 repository: "0xB16D4dy/0xB16D4dy" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/images/masthead.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: "/assets/images/masthead.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -104,12 +104,12 @@ analytics:
 
 # Site Author
 author:
-  name: "0xB16D4dy"
-  avatar: "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name: "BiGDady"
+  avatar: "/assets/images/spy_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Pentester, CTF Player."
   location: "Vietnam"
   email:
-  github: "0xB16D4dy"
+  github: "BiGDady"
   twitter: k1ngsm4n_5p
   links:
     - label: "Email"

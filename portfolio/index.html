@@ -30,6 +30,13 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- Fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap CSS v5.2.1 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -42,13 +49,28 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- Link tailwind css -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script> -->
+    <!-- Link css -->
+    <link rel="stylesheet" href="./assets/css/index.min.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <header class="header">
+      <nav class="navbar navbar-expand-sm">
         <div class="container">
-          <img src="./assets/images/masthead.png" alt="" width="32" />
-          <a class="navbar-brand ms-2" href="/">0xB16D4dy</a>
+          <!-- <img src="" alt="" /> -->
+          <a class="navbar-brand ms-2" href="/">BiGDady</a>
           <button
             class="navbar-toggler d-lg-none"
             type="button"
@@ -59,7 +81,7 @@
             aria-label="Toggle navigation"
           ></button>
           <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav me-5 mt-2 mt-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="/" aria-current="page">Home</a>
               </li>
@@ -85,20 +107,56 @@
     </header>
     <!-- carousel Download cv -->
     <section class="carousel">
-      <div class="wrapper-carousel">
-        <div class="row ms-auto">
-          <div class="col-6 text-center">Test</div>
-          <div class="col-6">
-            <img
-              src="./assets/images/banner.jpeg"
-              alt="carousel"
-              style="width: 100%; height: auto; display: block"
-            />
+      <div class="carousel__wrapper">
+        <div class="container">
+          <div class="row ms-auto">
+            <div class="col-6">
+              <div class="item">
+                <h1 class="title-banner">I'm a Penetration Tester</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Beatae necessitatibus a asperiores voluptatem obcaecati est,
+                  officia explicabo, ad natus quos iste! Aperiam hic quae quas
+                  iure impedit temporibus recusandae dignissimos quibusdam,
+                  dolores incidunt ullam eum, itaque eaque officiis fugiat
+                  sequi.
+                </p>
+                <div class="button">
+                  <a
+                    href="https://drive.google.com/file/d/18AELwFLZJYVwMxrNhNGk2XnhMaDOb-AL/view?usp=drive_link"
+                    class="register-btn"
+                    >Download Resume</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <img
+                src="./assets/images/home-banner.png"
+                alt="carousel"
+                style="width: 100%; height: auto; display: block"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- about -->
+    <section class="about">
+      <div class="container">
+        <div class="wrapper">
+          <span class="css-wrapper__input">
+            <input class="css-input" type="text" />
+          </span>
+          <button
+            class="btn btn-outline-secondary"
+            style="background-color: rgba(231, 245, 1, 1); color: black"
+          >
+            Click to submit
+          </button>
+        </div>
+      </div>
+    </section>
     <!-- Experience -->
     <!-- Education -->
     <!-- Projects -->
