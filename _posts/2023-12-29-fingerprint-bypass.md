@@ -1,6 +1,6 @@
 ---
 title: "FINGERPRINT BYPASS"
-layout: posts
+layout: single
 last_modified_at: 29-12-2023T16:08:30
 categories:
   - Blog
