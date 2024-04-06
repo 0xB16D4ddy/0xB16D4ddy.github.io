@@ -22,9 +22,9 @@ title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "0xB16D4ddy"
 description: "Pentester, CTF Player."
-url: "https://0xB16D4dy.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "https://0xB16D4ddy.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "0xB16D4dy/0xB16D4dy" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: "0xB16D4ddy/0xB16D4ddy" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: "/assets/images/unkown_avatar.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: "/assets/images/unkown_avatar.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
@@ -104,13 +104,14 @@ analytics:
 
 # Site Author
 author:
-  name: "BiGDady"
+  name: "BiGDaddy"
   avatar: "/assets/images/unkown_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "Pentester, CTF Player."
   location: "Vietnam"
   email:
   github: "BiGDaddy"
   twitter: k1ngsm4n_5p
+  linkedin: bigdaddy17
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -130,6 +131,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      # url: "https://linkedin.com/in"
 
 # Site Footer
 footer:
@@ -151,6 +155,9 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
+      # url:
+    - label: "LinkedIn"
+    - icon: "fab fa-fw fa-linkedin-in"
       # url:
 
 # Reading Files
