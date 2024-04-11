@@ -1,0 +1,128 @@
+/*
+   fonts custom
+   ========================================================================== */
+
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file + ".ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font("Roboto Mono", "/assets/fonts/RobotoMono/RobotoMono-Regular");
+
+@include font(
+  "BBlueTerminal NF",
+  "/assets/fonts/BigBlueTerminal/BigBlueTermPlusNerdFontMono-Regular"
+);
+
+@include font("FiraCode", "/assets/fonts/FiraCode/FiraCode-Regular");
+
+/* system typefaces custom */
+$serif: Georgia, Times, serif !default;
+$sans-serif: "Roboto Mono", BlinkMacSystemFont, "Roboto", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+$monospace: "FiraCode", Monaco, Consolas, "Lucida Console", monospace !default;
+$sans-serif-terminal: "BBlueTerminal NF";
+
+/* serif typefaces */
+// ...
+
+$global-font-family: $sans-serif !default;
+$header-font-family: $sans-serif-terminal !default;
+$caption-font-family: $serif !default;
+
+/*
+   Breakpoints custom
+   ========================================================================== */
+
+$small: 600px !default;
+$medium: 768px !default;
+$medium-wide: 992px !default;
+$large: 1200px !default;
+$x-large: 1440px !default;
+$max-width: $x-large !default;
+
+.page__content {
+  p,
+  li,
+  dl {
+    line-height: 2;
+  }
+}
+
+/* headline scale */
+$h-size-1: 2.625em !default; // ~42px
+$h-size-2: 2.25em !default; // ~36px
+$h-size-3: 1.625em !default; // ~26px
+$h-size-4: 1.313em !default; // ~21px
+$h-size-5: 1.125em !default; // ~18px
+$h-size-6: 1em !default; // ~16px
+
+.list__item {
+  .page__meta {
+    font-size: 0.75em !important;
+  }
+}
+p.archive__item-excerpt {
+  font-size: 1em !important;
+}
+
+/** Typewriter terminal animations
+* reference: https://css-tricks.com/snippets/css/typewriter-effect/
+* need to config span in post header
+**/
+
+span.text {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+  margin: 0 auto;
+  animation: typing 1.5s steps(44, end);
+  -webkit-animation: typing 1.5s steps(44, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 6em;
+  }
+}
+
+span.terminal {
+  width: 22px;
+  height: 5px;
+  display: inline-block;
+  background-color: #fff !important;
+  animation: blink 0.8s infinite;
+  -webkit-animation: blink 0.8s infinite;
+  transform: translate(0%, 673%);
+  -webkit-transform: translate(0%, 673%);
+  -moz-transform: translate(0%, 673%);
+  -ms-transform: translate(0%, 673%);
+  -o-transform: translate(0%, 673%);
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.3;
+  }
+}
+
+// #header__navigation_right ul > li:nth-child(2) a {
+//   background: #39acff;
+//   border: 2px solid #1a1e26;
+//   min-width: 148px;
+//   color: white;
+//   text-align: center;
+//   justify-content: center;
+//   font-weight: bold;
+//   margin-left: 22px;
+//   margin-right: 22px;
+//   box-shadow: 3px 5px 0px #23262c;
+//   font-size: 14px;
+// }
