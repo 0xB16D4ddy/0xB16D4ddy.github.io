@@ -8,11 +8,15 @@ tags:
   - Security Mobile
   - Hacking Mobile
   - Pentest Mobile
+
+toc: true
+toc_label: "Content Security"
+toc_sticky: true
 ---
 
 **Date created: Fri, 29-12-2023 08:30**
 
-## Mở đầu
+## <span class="text">Introduce</span><span class="terminal">&nbsp;</span>
 
 Biometric authentication được thực hiện bằng cách sử dụng class `FingerprintManager` hoặc `BiometricPrompt` để quản lý cơ chế authentication và hộp thoại thông báo của ứng dụng yêu cầu người dùng authenticate.
 Class `FingerprintManager` được giới thiệu trong API 23 chỉ hỗ trợ xác thực dấu vân tay và không dùng nữa kể từ API 28. Thay vào đó `BiometricPrompt` được phát hành và cách sử dụng cũng khá tương đồng với `FingerprintManager`.
@@ -27,18 +31,18 @@ public void authenticate (BiometricPrompt.CryptoObject crypto, CancellationSigna
 
 Phương thức này sẽ khởi động phần cứng biometric, hiển thị hộp thoại do hệ thống cung cấp yêu cầu sinh trắc học của người dùng và bắt đầu quét để xác thực sinh trắc học. Phương thức này bao gồm các đối số(arguments) lần lượt là:
 
-- [ **`crypto`**](https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.CryptoObject): Đối tượng này chứa tham chiếu tới entry trong keystore cần được mở khoá. Để triển khai xác thực sinh trắc học một cách an toàn, keystore key bên trong đối tượng **`crypto`** phải được sử dụng cho một số các hoạt động cryptographic quan trọng của ứng dụng.
-- [**`cancel`**](https://developer.android.com/reference/android/os/CancellationSignal): Đối tượng này dùng để huỷ việc xác thực.
-- [**`executor`**](https://developer.android.com/reference/java/util/concurrent/Executor): Executor này sẽ chịu trách nhiệm xử lý các sự kiện của callback.
-- [**`callback`**](https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.AuthenticationCallback): Đối tượng này là một `structure with callbacks` sẽ nhận các sự kiện xác thực được dispatch thông qua Executor.
-  Trong đó hai đối số quan trọng mà cần chú ý dó là **`crypto`** và **`callback`** vì nó chịu trách nhiệm liên quan tới vấn đề xác thực của phương thức này.
+- [ `crypto`](https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.CryptoObject): Đối tượng này chứa tham chiếu tới entry trong keystore cần được mở khoá. Để triển khai xác thực sinh trắc học một cách an toàn, keystore key bên trong đối tượng `crypto` phải được sử dụng cho một số các hoạt động cryptographic quan trọng của ứng dụng.
+- [`cancel`](https://developer.android.com/reference/android/os/CancellationSignal): Đối tượng này dùng để huỷ việc xác thực.
+- [`executor`](https://developer.android.com/reference/java/util/concurrent/Executor): Executor này sẽ chịu trách nhiệm xử lý các sự kiện của callback.
+- [`callback`](https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.AuthenticationCallback): Đối tượng này là một `structure with callbacks` sẽ nhận các sự kiện xác thực được dispatch thông qua Executor.
+  Trong đó hai đối số quan trọng mà cần chú ý dó là `crypto` và `callback` vì nó chịu trách nhiệm liên quan tới vấn đề xác thực của phương thức này.
   Tham số `BiometricPrompt.AuthenticationCallback` được sử dụng như một callback structure thực hiện các phương thức như là:
 - [onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result)](<https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.AuthenticationCallback.html#onAuthenticationSucceeded(android.hardware.biometrics.BiometricPrompt.AuthenticationResult)>)
 - [onAuthenticationError](<https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.AuthenticationCallback.html#onAuthenticationError(int,%20java.lang.CharSequence)>)()
 - [onAuthenticationFailed](<https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt.AuthenticationCallback.html#onAuthenticationFailed()>)()
   Trong đó phương thức `onAuthenticationSucceeded` sẽ kích hoạt khi người dùng được hệ thống xác thực thành công. Phương thức mở khoá ứng dụng thường có sẵn bên trong cái phương thức `callback` này.
-  Ý tưởng khai thác cho vấn đề này là thực hiện hooking vào process của ứng dụng và thực hiện gọi trực tiếp phương thức **`onAuthenticationSucceded`** từ đó ứng dụng sẽ được mở khoá ngay lập tức mà không cần cung cấp sinh trắc học hợp lệ.
-  Việc triển khai của phương thức **`onAuthenticationSucceded`** có lỗ hổng thường sẽ tương tự như đoạn code sau:
+  Ý tưởng khai thác cho vấn đề này là thực hiện hooking vào process của ứng dụng và thực hiện gọi trực tiếp phương thức `onAuthenticationSucceded` từ đó ứng dụng sẽ được mở khoá ngay lập tức mà không cần cung cấp sinh trắc học hợp lệ.
+  Việc triển khai của phương thức `onAuthenticationSucceded` có lỗ hổng thường sẽ tương tự như đoạn code sau:
 
 ```java
 public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
@@ -135,7 +139,7 @@ function hookBiometricPrompt_authenticate() {
 }
 ```
 
-Hàm `hookBiometricPrompt_authenticate`, được định nghĩa để thực hiện hook vào phương thức `authenticate` của class `android.hardware.biometrics.BiometricPrompt` có đối số lần lượt là ==('android.os.CancellationSignal', 'java.util.concurrent.Executor', 'android.hardware.biometrics.BiometricPrompt$AuthenticationCallback')==. Tiếp đó thực hiện in ra các tham số của hàm `biometricPrompt.authenticate` đó và gọi hàm `getBiometricPromptAuthResult` đã được định nghĩa ở trên, lưu vào biến `authenticationResultInst`. Cuối cùng là gọi phương thức callback `onAuthenticationSucceeded` và truyền vào biến `authenticationResultInst`.
+Hàm `hookBiometricPrompt_authenticate`, được định nghĩa để thực hiện hook vào phương thức `authenticate` của class `android.hardware.biometrics.BiometricPrompt` có đối số lần lượt là `('android.os.CancellationSignal', 'java.util.concurrent.Executor', 'android.hardware.biometrics.BiometricPrompt$AuthenticationCallback')`. Tiếp đó thực hiện in ra các tham số của hàm `biometricPrompt.authenticate` đó và gọi hàm `getBiometricPromptAuthResult` đã được định nghĩa ở trên, lưu vào biến `authenticationResultInst`. Cuối cùng là gọi phương thức callback `onAuthenticationSucceeded` và truyền vào biến `authenticationResultInst`.
 
 ```
 function hookBiometricPrompt_authenticate2() {
@@ -157,9 +161,9 @@ function hookBiometricPrompt_authenticate2() {
 }
 ```
 
-Hàm `hookBiometricPrompt_authenticate2`, cũng tương tự nhưng đối số sẽ bao gồm thêm ==('android.hardware.biometrics.BiometricPrompt$CryptoObject')==. Đối tượng này như đã được trình bày ở trên sẽ chịu trách nhiệm về các vấn đề liên quan đến việc tham chiếu tới keystore entry của ứng dụng.
+Hàm `hookBiometricPrompt_authenticate2`, cũng tương tự nhưng đối số sẽ bao gồm thêm `('android.hardware.biometrics.BiometricPrompt$CryptoObject')`. Đối tượng này như đã được trình bày ở trên sẽ chịu trách nhiệm về các vấn đề liên quan đến việc tham chiếu tới keystore entry của ứng dụng.
 
-## Tổng kết
+## Conclusion
 
 Bên trên là bài báo cáo chi tiết về nguyên do dẫn đến lỗi `Biometric authentication` này cũng như luồng thực thi của script frida fingerprint bypass của WithSecureLabs.
 
@@ -167,6 +171,6 @@ Bên trên là bài báo cáo chi tiết về nguyên do dẫn đến lỗi `Bio
 
 References:
 
-- https://labs.withsecure.com/publications/how-secure-is-your-android-keystore-authentication
+- [How secure is your android keystore authentication](https://labs.withsecure.com/publications/how-secure-is-your-android-keystore-authentication)
 
 ---

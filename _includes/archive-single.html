@@ -28,3 +28,31 @@
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
+
+<!-- <a
+  href="{{ post.url | relative_url }}"
+  class="post-blog-card"
+  style="text-decoration: none; 
+    --image-url: url({{ teaser }});
+    --ribbon: {{ ribbon }};"
+>
+  <div class="post-meta">
+    <div class="post-ribbon">
+      <span class="post-ribbon4">{{ post.categories[0] }}</span>
+    </div>
+  </div>
+
+  <div class="post-description">
+    <h1>{{ title }}</h1>
+    <p>{{ post.description | truncate: 120}}</p>
+
+    <p class="post-date page__meta">{{post.date | date_to_string}}</p>
+
+    {% if post.read_time %}
+    <p class="post-time page__meta">
+      <i class="far fa-clock" aria-hidden="true"></i>
+      {% include read-time.html %}
+    </p>
+    {% endif %}
+  </div>
+</a> -->
