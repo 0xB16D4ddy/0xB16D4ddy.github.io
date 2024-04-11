@@ -45,7 +45,8 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  // change font of title to terminal font
+  font-family: $sans-serif-terminal;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
