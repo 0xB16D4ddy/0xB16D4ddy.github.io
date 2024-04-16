@@ -1,10 +1,12 @@
 ---
 permalink: /about/
 title: "About"
-layout: single
+layout: home
 author_profile: true
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Hello, I'm Huỳnh Lê Hữu Phước, currently working as a Security Engineer at CAKE by VPBank. My responsibilities include Penetration Testing, Security Engineering, Vulnerability Assessments, and Red Team.
+Before, I was work as a Penetration Tester at Vietnamese Security Network J.S.C - VSEC
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I am a Pentester with passion for web hacking, mobile hacking. I have knowledge and experience doing web, API and mobile security assessments. Trained at CyberJustsu, I have a security mindset.
+In the following years, I want to be an expert Pentester and achieve some Offensive Security Certifications.
