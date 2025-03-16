@@ -5,7 +5,4 @@ vendor/
 # Ignore system files
 .git
 .gitignore
-# Ignore Docker files
-Dockerfile
-docker-compose.yml
 .DS_Store

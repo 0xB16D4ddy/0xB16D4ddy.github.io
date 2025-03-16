@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  jekyll:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Mapping port 4000 in docker container to port 4000 in host machine
+    ports:
+      - "4000:4000"
+      - "35729:35729" # Port live-reload
+    # Mount volume in docker container with current directory
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - JEKYLL_ENV=development
+    command:
+      ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload"]
