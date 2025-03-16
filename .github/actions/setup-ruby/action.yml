@@ -1,0 +1,11 @@
+name: 'Setup Ruby Environment'
+description: 'Set up Ruby and cache Bundler gems'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'  # Khớp với Dockerfile
+        bundler-cache: true  # Tự động cache gem
+        cache-version: 0     # Phiên bản cache

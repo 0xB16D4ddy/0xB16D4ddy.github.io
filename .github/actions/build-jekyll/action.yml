@@ -1,0 +1,20 @@
+name: 'Build Jekyll Site'
+description: 'Build the Jekyll site and run HTML validation'
+runs:
+  using: 'composite'
+  steps:
+    - name: Build site
+      run: |
+        bundle install
+        bundle exec jekyll build -d "_site${{ steps.pages.outputs.base_path }}"
+      shell: bash
+      env:
+        JEKYLL_ENV: "production"
+
+    - name: Test site
+      run: |
+        bundle exec htmlproofer ./_site \
+          --disable-external \
+          --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+          --ignore-files "/assets/"
+      shell: bash

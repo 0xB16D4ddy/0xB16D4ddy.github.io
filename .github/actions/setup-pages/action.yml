@@ -1,0 +1,8 @@
+name: 'Setup GitHub Pages'
+description: 'Configure the GitHub Pages environment'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v4

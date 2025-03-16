@@ -1,0 +1,14 @@
+name: 'Deploy to GitHub Pages'
+description: 'Deploy the built site to GitHub Pages'
+runs:
+  using: 'composite'
+  steps:
+    - name: Upload site artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: "_site${{ steps.pages.outputs.base_path }}"
+        retention-days: 7
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

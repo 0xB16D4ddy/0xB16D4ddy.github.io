@@ -1,0 +1,62 @@
+# Tên của workflow, hiển thị trên tab Actions của GitHub
+name: Build and Deploy to GitHub Pages
+
+# Xác định các sự kiện (events) kích hoạt workflow
+on:
+  push:
+    branches:
+      - master
+      - dev
+      - release
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - LICENSE
+  pull_request:
+    branches:
+      - master
+      - dev
+      - release
+  workflow_dispatch:
+
+# Quyền truy cập cần thiết cho GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Chỉ cho phép một lần deploy cùng lúc, hủy deploy đang chạy nếu có yêu cầu mới
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Định nghĩa các job (công việc) trong workflow
+jobs:
+  # Job đầu tiên: Build mã nguồn Jekyll
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: ./.github/actions/checkout-code
+
+      - name: Setup Pages
+        uses: ./.github/actions/setup-pages
+
+      - name: Setup Ruby
+        uses: ./.github/actions/setup-ruby
+
+      - name: Build and test Jekyll site
+        uses: ./.github/actions/build-jekyll
+
+  # Job thứ hai: Deploy lên GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/release'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: ./.github/actions/deploy-pages
