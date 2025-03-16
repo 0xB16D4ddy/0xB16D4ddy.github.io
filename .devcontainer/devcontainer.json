@@ -1,0 +1,24 @@
+{
+  "name": "Jekyll Development Environment",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "jekyll",
+  "workspaceFolder": "/srv/jekyll",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.cpptools",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "bundle install",
+  "remoteEnv": {
+    "JEKYLL_ENV": "development"
+  }
+}

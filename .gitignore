@@ -1,5 +1,11 @@
-_site
-.sass-cache
-.jekyll-metadata
-Gemfile.lock
-**.DS_Store
+# Ignore generated files
+_site/
+.jekyll-cache/
+vendor/
+# Ignore system files
+.git
+.gitignore
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+.DS_Store
